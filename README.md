@@ -19,5 +19,9 @@ git submodule update
 
 # OR!!!
 
-git submodule update --init --recursive
+`git submodule update --init --recursive`
+
+# Installing node-modules in each submodule:
+
+`git submodule foreach 'npm install'`
 
