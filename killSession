@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+#kill all sessions except session 'fullstack_submodule'
+tmux kill-session -a -t fullstack_submodule

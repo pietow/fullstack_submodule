@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+git submodule foreach '
+tmux new -d -s $name
+tmux neww -d -t $name:2
+tmux send-keys -t $name "nvim ." ENTER
+tmux send-keys -t $name:2 "npm start" ENTER
+'
+
+# tmux neww -d -t $name:1
+# tmux neww -d -t $name:2
+# tmux send-keys -t $name:1 'vi .'
+# tmux send-keys -t $name:2 'npm start'
+
+# runSubs () {
+#     session_name=$(pwd)
+#     echo "${session_name##*/}"
+# }
+
+# runSubs
+# session_name=$(basename "$session" | tr . _)
+
+# if ! tmux has-session -t "$session_name" 2> /dev/null; then
+#     tmux new-session -s "$session_same" -c "$session" -d
+# fi
+
+# tmux new-session -s "$session_name" -c "$session" -d
+# tmux switch-client -t "$session_name"
